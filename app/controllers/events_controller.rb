@@ -2,7 +2,10 @@ class EventsController < ApplicationController
 
 def new 
 @event = Event.new
-@event.build_location
+@location = @event.build_location 
+@location.users.build
+@user = User.all
+@user = User.convert(@user)
 end 
 
 def create 
@@ -11,7 +14,6 @@ if @event.save
 @location = Location.last
 @location.update_attribute(:event_id, @event.id)
 flash[:notice] = "A new event has been added."
-binding.pry
 redirect_to new_user_path
 else 
 flash[:notice] = "Failed to create meeting."
@@ -29,7 +31,7 @@ end
 
 private 
 def event_params 
-params.require(:event).permit(:name, :start, :end ,:url, :notes, location_attributes: [:phone, :name])
+params.require(:event).permit(:name, :start, :end ,:url, :notes, location_attributes: [:phone, :name, users_attributes: [:first_name => {}] ] )
 end 
 
 end 

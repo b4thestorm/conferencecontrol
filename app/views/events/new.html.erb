@@ -8,15 +8,25 @@
 <%= event.label :start%>
 <%= event.time_select :start, {:ampm => true} %>
 </br></br>
-<%= event.label :end%>
+<%= event.label :end %>
 <%= event.time_select :end, {:ampm => true} %>
 </br></br>
-<%= event.fields_for :location do |loc|%>
+<%= event.fields_for :location do |loc| %>
 <%= loc.label 'Meeting Room'%>
 <%= loc.select(:name, Location::CONFLOCATION)%>
-<%end%>
 </br></br>
+<%= loc.fields_for :users do |user| %>
+<%= user.label 'Add Participants' %>
+<%= user.select :first_name , options_for_select(@user),{}, { :multiple => true, :size => 5 }%>
+<%end%>
+<%end%>
+</br>
+</br>
 <%= event.submit "Create Meeting"%>
 <%end%>
 </div>
 <!-- location.select(:name, Location::CONFLOCATION) -->
+
+<!-- @user.each do |participant| -->
+
+
