@@ -1,0 +1,9 @@
+class LocationsController < ApplicationController 
+
+
+
+
+
+
+
+end 

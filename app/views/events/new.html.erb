@@ -1,0 +1,26 @@
+
+<h2>Set Event</h2>
+<div>
+<%= form_for @event do |event| %>
+<%= event.label :name %>
+<%= event.text_field :name %>
+</br></br>
+<%= event.fields_for :locations do |location|%>
+<%= location.label 'Location Name'%>
+<%= location.select(:event_id, Location::CONFLOCATION)%>
+<%end%>
+</br></br>
+<%= event.label :start%>
+<%= event.time_select :start,  {:ampm => true} %>
+</br></br>
+<%= event.label :end%>
+<%= event.time_select :end, {:ampm => true} %>
+</br></br>
+<%= event.label :url%>
+<%= event.text_field :url %>
+</br></br>
+<%= event.label :notes%>
+<%= event.text_field :notes%>
+</br></br><%= event.submit "Create Event"%>
+<%end%>
+</div>
