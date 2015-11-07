@@ -1,5 +1,6 @@
 
 <h2>Create Meeting</h2>
+<%link_to 'Add a Participant', %>
 <div>
 <%= form_for @event do |event| %>
 <%= event.label :name %>
@@ -16,8 +17,8 @@
 <%= loc.select(:name, Location::CONFLOCATION)%>
 </br></br>
 <%= loc.fields_for :users do |user| %>
-<%= user.label 'Add Participants' %>
-<%= user.select :first_name , options_for_select(@user),{}, { :multiple => true, :size => 5 }%>
+<%= user.label 'Add Participant' %>
+<%= user.select :first_name , options_for_select(@user), {:size => 5 }%>
 <%end%>
 <%end%>
 </br>

@@ -1,0 +1,9 @@
+<%=form_for @event do |f|%>
+<%= f.fields_for :location do |loc| %>
+<%= loc.fields_for :users do |user| %>
+<%= user.label 'Add Participant' %>
+<%= user.select :first_name , options_for_select(@user), {:size => 5 }%>
+<%end%>
+<%end%>
+<%=f.submit "Add Participant"%>
+<%end%>
