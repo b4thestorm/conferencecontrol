@@ -3,9 +3,9 @@ class Location < ActiveRecord::Base
   belongs_to :event
 
   CONFLOCATION = {
-    conf: 'email1@gmail.com',
-    conf2: 'email2@gmail.com',
-    conf3: 'email3@gmail.com'
+    conference1: 'email1@gmail.com',
+    conference2: 'email2@gmail.com',
+    conference3: 'email3@gmail.com'
   }
 
 end

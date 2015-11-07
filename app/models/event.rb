@@ -3,7 +3,7 @@ class Event < ActiveRecord::Base
   has_one :location
 
   accepts_nested_attributes_for :location
-
+  accepts_nested_attributes_for :users
   
 
 end

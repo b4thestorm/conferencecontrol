@@ -13,8 +13,8 @@ def create
 if @user.save 
   flash[:notice] = "Thank you for registering"
 end 
+redirect_to new_event_path
 # redirect_to create a new event 
-
 end 
 
 
