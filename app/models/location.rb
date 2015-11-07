@@ -8,4 +8,5 @@ class Location < ActiveRecord::Base
     conference3: 'email3@gmail.com'
   }
 
+
 end

@@ -1,0 +1,14 @@
+<h1>Create New User</h1>
+<br>
+<%=form_for @user do |f|%>
+<%=f.label "First Name"%>
+<%=f.text_field :first_name %>
+<br>
+<%=f.label "Phone Number"%>
+<%=f.text_field :phone %>
+<br>
+<%=f.label "Email"%>
+<%=f.text_field :email %>
+<br>
+<%=f.submit "Create User"%>
+<%end%>
